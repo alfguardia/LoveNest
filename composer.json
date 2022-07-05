@@ -1,0 +1,14 @@
+{
+    "name": "aj/urbetrack-db",
+    "description": "Urbetrack Base de Datos",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Model\\": "./models",
+            "Views\\": "./views",
+            "Controller\\": "./controllers"
+        }
+    },
+    "require": {}
+}

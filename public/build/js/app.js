@@ -1,0 +1,1 @@
+const alertasContainer=document.querySelector("#alertas-container");alertasContainer&&setTimeout(()=>{alertasContainer.remove()},3e3);

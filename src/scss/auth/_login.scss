@@ -1,0 +1,55 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.contenedor-login {
+    margin: auto;
+    width: 80%;
+    @include m.tablet {
+        width: 40%;
+    }
+}
+
+.form-login {
+    label {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: darken(v.$gris, 15%);
+    }
+    .campo {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            border: none;
+            border-bottom: solid 1px v.$rojo;
+        }
+    }
+
+    .btn-login {
+        margin-top: 3rem;
+        width: 100%;
+    }
+}
+
+.descripcion-pagina {
+    @include m.textoDegradado(v.$rojo);
+    font-size: 5rem;
+    @include m.tablet {
+        font-size: 4rem;
+    }
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    .enlaces {
+        font-weight: bold;
+    }
+}
