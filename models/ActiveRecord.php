@@ -155,15 +155,22 @@ class ActiveRecord
         return $resultado;
     }
 
-    public static function sweetAlert($mensaje, $detalles, $tipo)
+    public static function sweetAlert($mensaje, $detalles, $tipo, $retornar = false)
     {
         $alerta = '<script type="text/javascript">
             Swal.fire({
                 icon: "' . $tipo . '",
                 title:"' . $mensaje . '",
-                text: "' . $detalles . '",
+                text: "' . $detalles . '"
             });
+            if("' . $retornar . '"){
+                setTimeout(() => {
+                window.location.href = "/";
+                },3000);
+            }
             </script>';
+
+
         static::$alertas['sweetAlert'][] = $alerta;
     }
 

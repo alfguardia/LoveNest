@@ -2,8 +2,9 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
-use Controller\UserController;
 use MVC\Router;
+use Controller\UserController;
+use Controller\DashboardController;
 
 $router = new Router();
 
@@ -15,16 +16,18 @@ $router->post('/',[UserController::class,'index']);
 $router->get('/create-account',[UserController::class,'createAccount']);
 $router->post('/create-account',[UserController::class,'createAccount']);
 
-// Autorizar cuenta
-
-
-// Olvide clave
+// Olvide clave (falta)
 $router->get('/forgot-password',[UserController::class,'forgotPassword']);
 $router->post('/forgot-password',[UserController::class,'forgotPassword']);
 
+// reestablecer password
+$router->get('/reestablecer',[UserController::class,'changePassword']);
 
 // Mensaje
-$router->get('/mensaje',[UserController::class,'mensaje']);
+$router->get('/confirmar',[UserController::class,'confirmAccount']);
 
+
+//Dashboard
+$router->get('/dashboard',[DashboardController::class,'index']);
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

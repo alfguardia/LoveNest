@@ -6,7 +6,7 @@ class User extends ActiveRecord
 {
 
     protected static $tabla = 'users';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'usuario', 'password', 'email'];
+    protected static $columnasDB = ['id', 'nombre', 'apellido', 'usuario', 'password', 'email', 'token', 'confirmado'];
 
     public function __construct($args = [])
     {
@@ -16,6 +16,8 @@ class User extends ActiveRecord
         $this->usuario = $args['usuario'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->email = $args['email'] ?? '';
+        $this->token = $args['token'] ?? '';
+        $this->confirmado = $args['confirmado'] ?? 0;
     }
 
     public function verificarCampos()
@@ -40,6 +42,37 @@ class User extends ActiveRecord
             self::$alertas['error'][] = 'El email no es valido';
         }
 
+        return self::$alertas;
+    }
+
+    public function generarToken()
+    {
+
+        $token = $this->token = md5(uniqid());
+        return $token;
+    }
+
+    public function hashPassword()
+    {
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+
+    public function validarLogin()
+    {
+        if (!$this->usuario) {
+            self::$alertas['error'][] = 'El usuario es obligatorio';
+        }
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El password es obligatorio';
+        }
+        return self::$alertas;
+    }
+
+    public function validarEmail()
+    {
+        if (!$this->email) {
+            self::$alertas['error'][] = 'El email es obligatorio';
+        }
         return self::$alertas;
     }
 }
