@@ -5,20 +5,21 @@
     <div id="alertas-container" class="alertas">
         <?php include_once  __DIR__ . '/../components/alertas.php'; ?>
     </div>
+    <?php if ($mostrar) { ?>
+        <form class="form-login" method="POST" action="">
+            <div class="campo">
+                <label for="password">Nueva password</label>
+                <input type="password" name="password" id="password">
+            </div>
 
-    <form class="form-login" method="POST" action="">
-        <div class="campo">
-            <label for="password">Nueva password</label>
-            <input type="password" name="password" id="password">
+            <input type="submit" value="Guardar cambios" class="btn-login">
+        </form>
+
+        <div class="acciones">
+            <a class="enlaces" href="/">Iniciar Sesión</a>
+            <a class="enlaces" href="/create-account">Crear cuenta</a>
         </div>
-
-        <input type="submit" value="Guardar cambios" class="btn-login">
-    </form>
-
-    <div class="acciones">
-        <a class="enlaces" href="/">Iniciar Sesión</a>
-        <a class="enlaces" href="/create-account">Crear cuenta</a>
-    </div>
+    <?php } ?>
 </div>
 
 <?php $script = '<script src="build/js/app.js"></script>' ?>

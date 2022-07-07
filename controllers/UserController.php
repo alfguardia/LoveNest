@@ -8,7 +8,6 @@ use Classes\Email;
 
 class UserController
 {
-
     public static function index(Router $router)
     {
         $alertas = [];
@@ -98,7 +97,6 @@ class UserController
 
                 if ($usuario) {
                     $usuario->generarToken();
-                    $usuario->confirmado = 0;
 
                     //Guardar cambios
                     $usuario->guardar();
@@ -136,11 +134,41 @@ class UserController
         ]);
     }
 
-    public static function changePassword(Router $router){
+    public static function changePassword(Router $router)
+    {
         $alertas = [];
+        $token = s($_GET['token']);
+        $mostrar = true;
+        if (!$token) {
+            header('Location: /');
+        }
 
-        $router->render('auth/change-password',[
-            'alertas' => $alertas
+        $usuario = User::where('token', $token);
+        if (!$usuario) {
+            $alertas = User::setAlerta('error', 'Token inválido');
+            $mostrar = false;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $usuario->sincronizar($_POST);
+            $alertas = $usuario->validarPassword();
+            if (empty($alertas)) {
+                $usuario->password = $usuario->password;
+                $usuario->hashPassword();
+                $usuario->token = '';
+                $resultado = $usuario->guardar();
+
+                if ($resultado) {
+                    User::sweetAlert('Password cambiada con exito', 'Redireccionando...', 'success', true);
+                }
+            }
+        }
+
+
+        $alertas = User::getAlertas();
+        $router->render('auth/change-password', [
+            'alertas' => $alertas,
+            'mostrar' => $mostrar
         ]);
     }
 }

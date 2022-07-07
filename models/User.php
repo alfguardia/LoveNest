@@ -75,4 +75,13 @@ class User extends ActiveRecord
         }
         return self::$alertas;
     }
+
+    public function validarPassword()
+    {
+        if (!$this->password) {
+
+            self::$alertas['error'][] = 'El password nuevo es obligatorio';
+        }
+        return self::$alertas;
+    }
 }
