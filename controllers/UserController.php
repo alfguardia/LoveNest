@@ -28,7 +28,9 @@ class UserController
                         session_start();
 
                         $_SESSION['nombre'] = $usuario->nombre;
-                        $_SESSION['nombre'] = $usuario->apellido;
+                        $_SESSION['apellido'] = $usuario->apellido;
+                        $_SESSION['id'] = $usuario->id;
+                        $_SESSION['usuarioId'] = $usuario->id;
                         $_SESSION['login'] = true;
 
                         //Redireccionar a la pagina

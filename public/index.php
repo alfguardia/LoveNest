@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controller\APIController;
 use Controller\UserController;
 use Controller\DashboardController;
 
@@ -27,5 +28,15 @@ $router->get('/confirmar',[UserController::class,'confirmAccount']);
 
 // ------------- VISTA DASHBOARD ------------------------------
 $router->get('/dashboard',[DashboardController::class,'index']);
+
+
+// Mercado
+$router->get('/mercado',[DashboardController::class,'mercado']);
+
+
+// API
+$router->post('/API/registro-producto',[APIController::class,'registrarProducto']);
+
+
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

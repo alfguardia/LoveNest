@@ -10,4 +10,10 @@ class DashboardController{
 
         $router->render('dashboard/index', []);
     }
+
+    public static function mercado(Router $router){
+
+        
+        $router->render('register/mercado', []);
+    }
 }
