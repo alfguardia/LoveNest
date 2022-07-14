@@ -13,10 +13,13 @@
         }
 
         input[type="text"],
-        input[type="number"] {
+        input[type="number"],
+        select {
             padding: 0.5rem;
             border: none;
             border-bottom: 1px solid darken(v.$rojoSuave, 0%);
+            text-align: center;
+            margin: 0;
         }
     }
 }

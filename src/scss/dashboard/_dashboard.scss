@@ -20,6 +20,7 @@
 
         a {
             padding: 1rem 1rem;
+            text-align: center;
             &:focus {
                 transition: all ease-in 0.5s;
                 background-color: v.$blanco;

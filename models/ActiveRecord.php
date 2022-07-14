@@ -123,6 +123,13 @@ class ActiveRecord
         return $resultado;
     }
 
+    public static function orderBy($categoria)
+    {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id = '${categoria}'";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
     // Busca un registro por su id
     public static function find($id)
     {
@@ -154,6 +161,15 @@ class ActiveRecord
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
+
+    public static function getColumn($columna)
+    {
+        $query = "SELECT * FROM " . static::$tabla . " GROUP BY ${columna} ";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+
 
     public static function sweetAlert($mensaje, $detalles, $tipo, $retornar = false)
     {

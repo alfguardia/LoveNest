@@ -29,6 +29,11 @@
             </div>
 
             <div class="mercado__campo">
+                <label for="categoria">Categoria</label>
+                <input type="text" name="categoria" id="categoria">
+            </div>
+
+            <div class="mercado__campo">
                 <label for="observacion">Nota</label>
                 <input type="text" name="observacion" id="observacion">
             </div>

@@ -18,8 +18,15 @@ class APIController
 
             $producto->guardar();
 
-
             echo json_encode($producto);
         }
+    }
+
+    public static function obtenerProductos()
+    {
+        $producto = new Product();
+        $resultado = $producto->orderBy('categoria');
+       
+        echo json_encode($resultado);
     }
 }
