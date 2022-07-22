@@ -1,7 +1,7 @@
 <div class="contenedor">
-    <h1 class="descripcion-pagina">Love<span>Nest</span></h1>
+    <?php include_once __DIR__ . '/../components/encabezado.php'; ?>
     <h2 class="subtitulo">Registrar Productos</h2>
-</div>
+    <?php include_once __DIR__ .'/../components/aside.php'; ?>
 
 <?php include_once __DIR__ . '/../components/navBar_mercado.php'; ?>
 
@@ -16,11 +16,6 @@
             <div class="mercado__campo">
                 <label for="marca">Marca</label>
                 <input type="text" name="marca" id="marca">
-            </div>
-
-            <div class="mercado__campo">
-                <label for="precio">Precio</label>
-                <input type="number" name="precio" id="precio">
             </div>
 
             <div class="mercado__campo">

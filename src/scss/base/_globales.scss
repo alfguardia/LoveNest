@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 html {
     font-size: 62.5%;
@@ -12,7 +12,9 @@ body {
     background-color: v.$blanco;
     color: v.$negro;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 body {
@@ -31,11 +33,20 @@ a {
 img {
     max-width: 100%;
 }
-label{
+label {
     font-size: 2rem;
 }
 
-.descripcion-pagina{
+.descripcion-pagina {
     margin: 2rem 0;
     font-family: v.$fuente_secundaria;
+}
+
+.home {
+    display: flex;
+    margin-top: 2rem;
+    img {
+        width: 28px;
+        height: 28px;
+    }
 }

@@ -37,6 +37,7 @@ $router->get('/lista-mercado',[DashboardController::class,'listaMercado']);
 // API
 $router->post('/API/registro-producto',[APIController::class,'registrarProducto']);
 $router->get('/API/obtener-producto',[APIController::class,'obtenerProductos']);
+$router->post('/API/editar-producto',[APIController::class,'editarProductos']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

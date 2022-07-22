@@ -7,8 +7,7 @@ class Product extends ActiveRecord
 
     protected static $tabla = 'supermarket';
     protected static $columnasDB = [
-        'id', 'fecha', 'producto', 'marca', 'precio',
-        'cantidad', 'categoria', 'observacion', 'foto', 'usuarioId'
+        'id', 'fecha', 'producto', 'marca','cantidad', 'categoria', 'observacion', 'foto', 'usuarioId'
     ];
 
     public function __construct($args = [])
@@ -17,7 +16,6 @@ class Product extends ActiveRecord
         $this->fecha = $args['fecha'] ?? '';
         $this->producto = $args['producto'] ?? '';
         $this->marca = $args['marca'] ?? '';
-        $this->precio = $args['precio'] ?? '';
         $this->cantidad = $args['cantidad'] ?? '';
         $this->categoria = $args['categoria'] ?? '';
         $this->observacion = $args['observacion'] ?? '';

@@ -12,12 +12,12 @@ class APIController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $producto = new Product($_POST);
+            $producto->producto = strtolower($producto->producto);
+
             $fecha = date('Y-m-d');
             $producto->fecha = $fecha;
             $producto->usuarioId = $_SESSION['id'];
-
             $producto->guardar();
-
             echo json_encode($producto);
         }
     }
@@ -26,7 +26,22 @@ class APIController
     {
         $producto = new Product();
         $resultado = $producto->orderBy('categoria');
-       
+
+        echo json_encode($resultado);
+    }
+
+    public static function editarProductos()
+    {
+        $productoNuevo = new Product($_POST);
+        // Buscar el producto
+        $producto = $productoNuevo->where('id', $productoNuevo->id);
+        if ($producto) {
+            $producto->producto = $productoNuevo->producto;
+            $producto->marca = $productoNuevo->marca;
+            $producto->categoria = $productoNuevo->categoria;
+
+            $resultado = $producto->guardar();
+        }
         echo json_encode($resultado);
     }
 }
