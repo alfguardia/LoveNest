@@ -111,7 +111,6 @@ async function obtenerProductos() {
     }
 }
 
-
 // Ordena los productos en orden por categorias
 function ordenarProductos(productos) {
     // Ordenar productos por categoria
@@ -142,6 +141,9 @@ function mostrarListas(productos) {
         const iconoProducto = document.createElement('IMG');
         const checkbox = document.createElement('INPUT');
         const editarProducto = document.createElement('DIV');
+        const eliminarProducto = document.createElement('DIV');
+        const divOpciones = document.createElement('DIV');
+
 
         // Agregando las clases
         product.classList.add('articulos');
@@ -150,22 +152,31 @@ function mostrarListas(productos) {
         labelProducto.classList.add('label-producto');
         iconoProducto.classList.add('img-categoria');
         editarProducto.classList.add('editar-producto');
-
+        eliminarProducto.classList.add('eliminar-producto');
+        divOpciones.classList.add('opciones');
 
         // Otras propiedades y funciones
         labelProducto.textContent = producto.producto;
         labelProducto.setAttribute('for', producto.producto);
+        // Iconos
         iconoProducto.src = `build/img/${producto.producto}.webp`;
         iconoProducto.onerror = function (e) {
             imagenDefault(e);
         }
+        // CheckBox
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('name', producto.producto);
-        editarProducto.onclick = function () {
-            console.log(producto);
-            editar(producto);
+
+        // Funcion para editar
+        editarProducto.onclick = () => {
+            confirmarEdicion(producto);
         }
 
+        eliminarProducto.onclick = () => {
+            confirmarEliminar(producto);
+        }
+
+        // Funcion para eliminar
 
         //Adjuntando al HTML
         divProduct.appendChild(checkbox);
@@ -174,9 +185,13 @@ function mostrarListas(productos) {
 
         product.appendChild(divProduct);
         icono.appendChild(divIcono);
+        divOpciones.appendChild(editarProducto);
+        divOpciones.appendChild(eliminarProducto);
+
         listaProductos.appendChild(product);
         listaProductos.appendChild(icono);
-        listaProductos.appendChild(editarProducto);
+        listaProductos.appendChild(divOpciones);
+
 
     });
 }
@@ -210,27 +225,9 @@ function limpiarLista() {
     }
 }
 
-// ---- Crear menu de navegación ----
-const navBtn = document.querySelector('#home-btn');
-if (navBtn) {
-    const aside = document.querySelector('.aside');
-    navBtn.addEventListener('click', function () {
-        aside.classList.toggle('mostrar');
-    })
-
-    aside.addEventListener('click', function () {
-        aside.classList.remove('mostrar');
-        aside.classList.add('ocultar');
-        setTimeout(() => {
-            aside.classList.remove('ocultar');
-        }, 1000);
-    })
-
-
-}
 
 // --- Editar producto ---
-async function editar(producto) {
+async function confirmarEdicion(producto) {
     const { value: formValues } = await Swal.fire({
         title: 'Actualizar Producto',
         html:
@@ -280,6 +277,47 @@ async function finalizarEdicion(data) {
         Swal.fire('Actualizado con exito!', '', 'success');
         limpiarLista();
         obtenerProductos();
+    }
+}
+
+// --- Eliminar ---
+async function confirmarEliminar(data) {
+
+    try {
+        Swal.fire({
+            title: 'Eliminar Producto?',
+            icon: 'question',
+            showCancelButton: 'Cancelar',
+            confirmButtonText: 'Eliminar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                eliminar(data);
+            }
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function eliminar(producto) {
+    const data = new FormData();
+    data.append('id', producto.id);
+
+    try {
+        const url = 'http://localhost:3000/API/eliminar-producto';
+        const resultado = await fetch(url, {
+            method: 'POST',
+            body: data
+        });
+        const respuesta = await resultado.json();
+        if (respuesta) {
+            Swal.fire('Producto eliminado!', '', 'success');
+            limpiarLista();
+            obtenerProductos();
+        }
+    }
+    catch (error) {
+        console.log(error);
     }
 }
 

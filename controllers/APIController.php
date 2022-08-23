@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Bills;
 use Model\Product;
 
 class APIController
@@ -43,5 +44,50 @@ class APIController
             $resultado = $producto->guardar();
         }
         echo json_encode($resultado);
+    }
+
+    public static function eliminarProducto()
+    {
+        $producto = new Product($_POST);
+        // Buscar el producto
+        echo json_encode($producto);
+        $respuesta = $producto->where('id', $producto->id);
+        if ($respuesta) {
+            $resultado = $producto->eliminar();
+        }
+    }
+
+    public static function obtenerGastos()
+    {
+        $gastos = new Bills();
+        $resultado = $gastos->orderBy('categoria');
+
+        echo json_encode($resultado);
+    }
+
+    public static function editarGasto()
+    {
+        $gastoEditado = new Bills($_POST);
+        // Buscar el producto
+        $gasto = $gastoEditado->where('id', $gastoEditado->id);
+        if ($gasto) {
+            $gasto->gasto = $gastoEditado->gasto;
+            $gasto->monto = $gastoEditado->monto;
+            $gasto->categoria = $gastoEditado->categoria;
+            $gasto->cuotas = $gastoEditado->cuotas;
+
+            $resultado = $gasto->guardar();
+        }
+        echo json_encode($gastoEditado);
+    }
+
+    public static function eliminarGasto()
+    {
+        $gastoEliminar = new Bills($_POST);
+        $respuesta = $gastoEliminar->where('id', $gastoEliminar->id);
+        echo json_encode($gastoEliminar);
+        if ($respuesta) {
+            $resultado = $gastoEliminar->eliminar();
+        }
     }
 }

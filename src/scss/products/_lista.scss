@@ -49,6 +49,22 @@
             cursor: pointer;
         }
     }
+
+    .eliminar-producto {
+        height: 28px;
+        width: 28px;
+        background-image: url(../img/delete.webp);
+        background-size: contain;
+        margin: 0 auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.opciones {
+    display: flex;
 }
 
 .lista__articulos__head {
@@ -122,13 +138,33 @@
     width: 28px;
 }
 
-.updateForm{
+.updateForm {
     display: flex;
     flex-direction: column;
- 
-    input{
+
+    input,
+    select {
         border: none;
         border-bottom: 1px solid v.$rojo;
         box-shadow: unset;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .cuotas {
+        display: block;
+    }
+    .cuotasOff {
+        display: none;
+    }
+}
+
+.total-gasto {
+    font-weight: bold;
+    margin-top: 3rem;
+    text-align: center;
+
+    span {
+        color: v.$azul;
     }
 }
