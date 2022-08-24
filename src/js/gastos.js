@@ -176,7 +176,11 @@ function mostrarListas(gastos) {
         divOpciones.classList.add('opciones');
 
         // Otras propiedades y funciones
-        categoria.textContent = gasto.categoria;
+        if (gasto.categoria === 'cuotas') {
+            categoria.textContent = `${gasto.categoria}(${gasto.cuotas})`;
+        } else {
+            categoria.textContent = gasto.categoria;
+        }
         labelGasto.textContent = gasto.gasto;
         labelGasto.setAttribute('for', gasto.gasto);
         // Iconos
