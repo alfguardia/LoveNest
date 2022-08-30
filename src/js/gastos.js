@@ -294,6 +294,7 @@ async function finalizarEdicion(data) {
 function totalGastos(gastos) {
     const totalSpan = document.querySelector('#total__span');
     let total = 0;
+    console.log(gastos);
     if (gastos.length > 0) {
         gastos.forEach(gasto => total += Number(gasto.monto));
         totalSpan.classList.add('total-gasto');
