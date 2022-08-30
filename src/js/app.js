@@ -6,6 +6,7 @@ if (alertasContainer) {
     }, 3000);
 }
 /// ------- Crear menu de Navegacion
+
 const navBtn = document.querySelector('#home-btn');
 if (navBtn) {
     const aside = document.querySelector('.aside');
