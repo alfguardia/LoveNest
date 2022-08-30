@@ -18,7 +18,11 @@
 
             <div class="gasto-campo">
                 <label for="metodo">Metodo de Pago</label>
-                <input class="gasto-input" type="text" id="metodo" name="metodo">
+                <select id="metodo" name="metodo" class="gasto-input gasto-select">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="debito">Debito</option>
+                    <option value="credito">Credito</option>
+                </select>
             </div>
 
             <div class="gasto-campo">

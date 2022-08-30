@@ -7,7 +7,6 @@ use MVC\Router;
 
 class GastosController
 {
-
     public static function index(Router $router)
     {
 
