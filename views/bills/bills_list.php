@@ -4,11 +4,11 @@
     <?php include_once __DIR__ . '/../components/aside.php'; ?>
     <?php include_once __DIR__ . '/../components/navBar_gastos.php'; ?>
 
-    <div class="loader-page">
+    <!-- <div class="loader-page">
         <div class="loader">
             <div></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="total">
         <p class="total-gasto">Total Gastado: <span id="total__span"></span></p>

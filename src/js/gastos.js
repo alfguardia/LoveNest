@@ -102,7 +102,7 @@ async function obtenerGastos() {
         const respuesta = await resultado.json();
         gastos = [...respuesta];
         // Saca el loader
-        offLoader();
+        //offLoader();
         // Calcula el total de gastos
         totalGastos(respuesta);
         // Actualiza el HTML
