@@ -50,7 +50,7 @@ async function registerProduct() {
         data.append('categoria', registroProducto[3].value.toLowerCase());
         data.append('observacion', registroProducto[4].value.toLowerCase());
 
-        const url = 'http://localhost:3000/API/registro-producto';
+        const url = 'https://lovenest-app.herokuapp.com/API/registro-producto';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
@@ -97,7 +97,7 @@ function offLoader() {
 
 async function obtenerProductos() {
     try {
-        const url = 'http://localhost:3000/API/obtener-producto';
+        const url = 'https://lovenest-app.herokuapp.com/API/obtener-producto';
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
         if (respuesta) {
@@ -267,7 +267,7 @@ async function confirmarEdicion(producto) {
 }
 
 async function finalizarEdicion(data) {
-    const url = 'http://localhost:3000/API/editar-producto';
+    const url = 'https://lovenest-app.herokuapp.com/API/editar-producto';
     const resultado = await fetch(url, {
         method: 'POST',
         body: data
@@ -304,7 +304,7 @@ async function eliminar(producto) {
     data.append('id', producto.id);
 
     try {
-        const url = 'http://localhost:3000/API/eliminar-producto';
+        const url = 'https://lovenest-app.herokuapp.com/API/eliminar-producto';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
