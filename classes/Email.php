@@ -38,7 +38,7 @@ class Email
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola! " . $this->nombre . "</strong> Has creado tu cuenta en
         UpTask, presiona el siguiente enlace para confirmar</p>";
-        $contenido .= "<p><a href='http://localhost:3000/confirmar?token=" . $this->token . "'</a>Presiona acá</p>";
+        $contenido .= "<p><a href='https://lovenest-app.herokuapp.com/confirmar?token=" . $this->token . "'</a>Presiona acá</p>";
         $contenido .= '</html>';
 
         $mail->Body = $contenido;
@@ -65,7 +65,7 @@ class Email
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola! " . $this->nombre . "</strong> presiona el siguiente enlace para reestablecer tu password</p>";
-        $contenido .= "<p><a href='http://localhost:3000/reestablecer?token=" . $this->token . "'</a>Presiona acá</p>";
+        $contenido .= "<p><a href='https://lovenest-app.herokuapp.com/reestablecer?token=" . $this->token . "'</a>Presiona acá</p>";
         $contenido .= '</html>';
 
         $mail->Body = $contenido;
