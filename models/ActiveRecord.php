@@ -123,9 +123,9 @@ class ActiveRecord
         return $resultado;
     }
 
-    public static function orderBy($categoria)
+    public static function orderBy($categoria, $usuarioId)
     {
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id = '${categoria}'";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE usuarioId = ${usuarioId} ORDER BY id = '${categoria}'";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
