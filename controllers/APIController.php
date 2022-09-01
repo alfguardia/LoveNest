@@ -25,11 +25,8 @@ class APIController
 
     public static function obtenerProductos()
     {
-        session_start();
-        $usuarioId = $_SESSION['id'];
         $producto = new Product();
-        $producto->usuarioId = $usuarioId;
-        $resultado = $producto->orderBy('categoria', $producto->usuarioId);
+        $resultado = $producto->orderBy('categoria');
 
         echo json_encode($resultado);
     }
@@ -62,11 +59,8 @@ class APIController
 
     public static function obtenerGastos()
     {
-        session_start();
-        $usuarioId = $_SESSION['id'];
         $gastos = new Bills();
-        $gastos->usuarioId = $usuarioId;
-        $resultado = $gastos->orderBy('categoria', $gastos->usuarioId);
+        $resultado = $gastos->orderBy('categoria');
 
         echo json_encode($resultado);
     }

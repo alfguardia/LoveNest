@@ -123,9 +123,9 @@ class ActiveRecord
         return $resultado;
     }
 
-    public static function orderBy($categoria, $usuarioId)
+    public static function orderBy($categoria)
     {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE usuarioId = ${usuarioId} ORDER BY id = '${categoria}'";
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id = '${categoria}'";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
@@ -228,7 +228,7 @@ class ActiveRecord
         $query .=  join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
         $query .= " LIMIT 1 ";
-        
+
         // Actualizar BD
         $resultado = self::$db->query($query);
         return $resultado;
