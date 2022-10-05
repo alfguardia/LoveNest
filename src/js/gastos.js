@@ -76,8 +76,9 @@ function confirmacion() {
 // Registra el gasto
 async function guardarGastos() {
     try {
+        console.log('Guardando...');
         const data = new FormData(gastosForm);
-        const url = 'https://lovenest-app.herokuapp.com/API/registro-gastos'
+        const url = 'https://lovenest-app.herokuapp.com/API/registro-gastos';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
