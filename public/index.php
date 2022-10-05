@@ -51,7 +51,7 @@ $router->post('/API/eliminar-gasto', [APIController::class, 'eliminarGasto']);
 // ------------- VISTA GASTOS ------------------------------
 // Registrar gastos
 $router->get('/gastos', [GastosController::class, 'index']);
-$router->post('/registrar-gastos', [GastosController::class, 'registrarGasto']);
+$router->post('/gastos', [GastosController::class, 'registrarGasto']);
 
 // Lista de gastos
 $router->get('/lista-gastos', [GastosController::class, 'listaGastos']);

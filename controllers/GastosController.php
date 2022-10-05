@@ -27,9 +27,7 @@ class GastosController
             $gasto->guardar();
             $alertas = Bills::getAlertas();
 
-            echo json_encode('Gasto Registrado');
-        } else {
-            echo json_encode('Gasto No Registrado');
+            echo json_encode([$gasto, $alertas]);
         }
     }
 

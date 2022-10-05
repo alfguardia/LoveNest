@@ -77,13 +77,12 @@ function confirmacion() {
 async function guardarGastos() {
     try {
         const data = new FormData(gastosForm);
-        const url = 'https://lovenest-app.herokuapp.com/API/registrar-gastos'
+        const url = 'https://lovenest-app.herokuapp.com/API/gastos'
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
         });
         const respuesta = await resultado.json();
-        console.log(respuesta);
         if (respuesta) {
             Swal.fire('Registrado con exito!', '', 'success');
             gastosForm.reset();
