@@ -46,12 +46,12 @@ $router->post('/API/eliminar-producto', [APIController::class, 'eliminarProducto
 $router->get('/API/obtener-gastos', [APIController::class, 'obtenerGastos']);
 $router->post('/API/editar-gastos', [APIController::class, 'editarGasto']);
 $router->post('/API/eliminar-gasto', [APIController::class, 'eliminarGasto']);
+$router->post('/API/registro-gastos', [GastosController::class, 'registrarGasto']);
 // --------------------------------------------------------------
 
 // ------------- VISTA GASTOS ------------------------------
 // Registrar gastos
 $router->get('/gastos', [GastosController::class, 'index']);
-$router->post('/gastos', [GastosController::class, 'registrarGasto']);
 
 // Lista de gastos
 $router->get('/lista-gastos', [GastosController::class, 'listaGastos']);
