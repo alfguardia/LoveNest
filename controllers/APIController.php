@@ -68,7 +68,7 @@ class APIController
         $gastos->usuarioId = $usuarioId;
         $resultado = $gastos->orderBy('categoria', $gastos->$usuarioId);
 
-        echo json_encode('Enviando resultados...');
+        echo json_encode($resultado);
     }
 
     public static function editarGasto()

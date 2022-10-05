@@ -103,7 +103,7 @@ async function obtenerGastos() {
         console.log('Enviando Fetch');
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
-        console.log(respuesta);
+        console.log(resultado);
         gastos = [...respuesta];
         // Saca el loader
         //offLoader();
