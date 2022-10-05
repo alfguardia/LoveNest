@@ -96,7 +96,6 @@ async function guardarGastos() {
 }
 
 // Lista de gastos
-
 async function obtenerGastos() {
     const url = 'https://lovenest-app.herokuapp.com/API/obtener-gastos';
     try {
