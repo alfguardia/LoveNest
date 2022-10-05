@@ -81,8 +81,9 @@ async function guardarGastos() {
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
-        })
+        });
         const respuesta = await resultado.json();
+        console.log(respuesta);
         if (respuesta) {
             Swal.fire('Registrado con exito!', '', 'success');
             gastosForm.reset();
