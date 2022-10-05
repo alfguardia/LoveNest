@@ -44,13 +44,8 @@
             <div class="gasto-campo">
                 <input type="submit" class="btn-submit" value="Guardar">
             </div>
-
-
         </form>
     </div>
-
-
-
 </div>
 
 

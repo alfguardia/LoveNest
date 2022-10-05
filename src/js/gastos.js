@@ -8,6 +8,7 @@ let url = window.location.href.split('/');
 let gastos = [];
 // Listeners
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('HOlaaa');
     console.log(url);
     //obtenerGastos();
 })
