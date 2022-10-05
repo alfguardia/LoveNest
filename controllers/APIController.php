@@ -31,7 +31,7 @@ class APIController
         $producto->usuarioId = $usuarioId;
         $resultado = $producto->orderBy('categoria', $producto->usuarioId);
 
-        echo json_encode($resultado);
+        echo json_encode('Obteniendo productos...');
     }
 
     public static function editarProductos()
