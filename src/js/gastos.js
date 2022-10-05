@@ -9,8 +9,7 @@ let gastos = [];
 // Listeners
 document.addEventListener('DOMContentLoaded', function () {
     console.log(url);
-    obtenerGastos();
-
+    //obtenerGastos();
 })
 
 if (cuotas) {
