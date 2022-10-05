@@ -97,8 +97,10 @@ async function guardarGastos() {
 
 // Lista de gastos
 async function obtenerGastos() {
+    console.log('Obteniendo resultados...');
     const url = 'https://lovenest-app.herokuapp.com/API/obtener-gastos';
     try {
+        console.log('Enviando Fetch');
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
         console.log(respuesta);
