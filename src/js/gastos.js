@@ -4,12 +4,13 @@ const cuotas = document.querySelector('#categoria');
 const cantidadCuotas = document.querySelector('#div-cuotas');
 const gastosForm = document.querySelector('#gastos-form');
 const listaSelect = document.querySelector('#option-list-select');
+let url = window.location.href.split('/');
 let gastos = [];
 // Listeners
 document.addEventListener('DOMContentLoaded', function () {
-    if (filtrar) {
-        obtenerGastos();
-    }
+    console.log(url);
+    obtenerGastos();
+
 })
 
 if (cuotas) {
