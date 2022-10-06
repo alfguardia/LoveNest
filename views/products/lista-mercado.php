@@ -26,6 +26,7 @@
         <p class="lista__articulos__label">Lista de productos</p>
         <div class="lista__articulos__head">
             <p>Nombre</p>
+            <p>Cantidad</p>
             <p>Categoria</p>
         </div>
         <ul class="lista_articulos" id="lista_articulos">

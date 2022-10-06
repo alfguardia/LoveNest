@@ -158,6 +158,8 @@ function mostrarListas(productos) {
         editarProducto.classList.add('editar-producto');
         eliminarProducto.classList.add('eliminar-producto');
         divOpciones.classList.add('opciones');
+        cantidadProducto.style.color = 'black';
+        cantidadProducto.style.fontWeight = 'bold';
 
         // Otras propiedades y funciones
         cantidadProducto.textContent = producto.cantidad;
