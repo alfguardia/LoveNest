@@ -127,7 +127,6 @@ class ActiveRecord
     {
         $query = "SELECT * FROM " . static::$tabla . " WHERE usuarioId = ${usuarioId} ORDER BY id = '${categoria}'";
         $resultado = self::consultarSQL($query);
-        echo json_encode($query);
         return $resultado;
     }
 

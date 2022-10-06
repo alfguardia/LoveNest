@@ -100,6 +100,7 @@ async function obtenerProductos() {
         const url = 'https://lovenest-app.herokuapp.com/API/obtener-producto';
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
+        console.log(respuesta);
         if (respuesta) {
             offLoader();
             productos = [...respuesta];
