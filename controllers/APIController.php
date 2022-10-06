@@ -66,7 +66,7 @@ class APIController
         $usuarioId = $_SESSION['id'];
         $gastos = new Bills();
         $gastos->usuarioId = $usuarioId;
-        $resultado = $gastos->orderBy('categoria', $gastos->$usuarioId);
+        $resultado = $gastos->orderBy('categoria', $gastos->usuarioId);
 
         echo json_encode($resultado);
     }
