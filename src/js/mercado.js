@@ -136,6 +136,7 @@ function mostrarListas(productos) {
         //Crear los elementos
         const product = document.createElement('LI');
         const icono = document.createElement('LI');
+        const cantidad = document.createElement('LI');
         const divProduct = document.createElement('DIV');
         const divIcono = document.createElement('DIV');
         const labelProducto = document.createElement('LABEL');
@@ -144,6 +145,8 @@ function mostrarListas(productos) {
         const editarProducto = document.createElement('DIV');
         const eliminarProducto = document.createElement('DIV');
         const divOpciones = document.createElement('DIV');
+        const cantidadProducto = document.createElement('P');
+
 
 
         // Agregando las clases
@@ -157,6 +160,8 @@ function mostrarListas(productos) {
         divOpciones.classList.add('opciones');
 
         // Otras propiedades y funciones
+        cantidadProducto.textContent = producto.cantidad;
+
         labelProducto.textContent = producto.producto;
         labelProducto.setAttribute('for', producto.producto);
         // Iconos
@@ -186,11 +191,13 @@ function mostrarListas(productos) {
 
         product.appendChild(divProduct);
         icono.appendChild(divIcono);
+        cantidad.appendChild(cantidadProducto);
         divOpciones.appendChild(editarProducto);
         divOpciones.appendChild(eliminarProducto);
 
         listaProductos.appendChild(product);
         listaProductos.appendChild(icono);
+        listaProductos.appendChild(cantidad);
         listaProductos.appendChild(divOpciones);
 
 
