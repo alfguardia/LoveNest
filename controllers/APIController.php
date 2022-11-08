@@ -41,6 +41,7 @@ class APIController
         $producto = $productoNuevo->where('id', $productoNuevo->id);
         if ($producto) {
             $producto->producto = $productoNuevo->producto;
+            $producto->cantidad = $productoNuevo->cantidad;
             $producto->marca = $productoNuevo->marca;
             $producto->categoria = $productoNuevo->categoria;
 
