@@ -100,7 +100,6 @@ async function obtenerProductos() {
         const url = 'https://lovenest-app.herokuapp.com/API/obtener-producto';
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
-        console.log(respuesta);
         if (respuesta) {
             offLoader();
             productos = [...respuesta];
@@ -238,21 +237,23 @@ function limpiarLista() {
 
 // --- Editar producto ---
 async function confirmarEdicion(producto) {
+    console.log(producto);
     const { value: formValues } = await Swal.fire({
         title: 'Actualizar Producto',
         html:
             '<form id="updateForm" method="POST" class="updateForm">' +
             '<label for="producto">Producto</label>' +
-            '<input name="producto" id="swal-input1" class="swal2-input">' +
+            `<input name="producto" id="swal-input1" class="swal2-input" value=${producto.producto}>` +
             '<label for="cantidad">Cantidad</label>' +
-            '<input name="cantidad" id="swal-input2" class="swal2-input">' +
+            `<input name="cantidad" id="swal-input2" class="swal2-input" value="${producto.cantidad}">` +
             '<label for="marca">Marca</label>' +
-            '<input name="marca" id="swal-input3" class="swal2-input">' +
+            `<input name="marca" id="swal-input3" class="swal2-input" value="${producto.cantidad}">` +
             '<label for="categoria">Categoria</label>' +
-            '<input name="categoria" id="swal-input4" class="swal2-input">' +
+            `<input name="categoria" id="swal-input4" class="swal2-input" value="${producto.categoria}">` +
             `<input type="hidden" name="id" value=${producto.id} >` +
             '</form>',
     })
+
     const updateForm = document.querySelector('#updateForm');
     const data = new FormData();
     data.append('producto', updateForm[0].value.toLowerCase());
