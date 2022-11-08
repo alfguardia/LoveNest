@@ -244,19 +244,22 @@ async function confirmarEdicion(producto) {
             '<form id="updateForm" method="POST" class="updateForm">' +
             '<label for="producto">Producto</label>' +
             '<input name="producto" id="swal-input1" class="swal2-input">' +
+            '<label for="cantidad">Cantidad</label>' +
+            '<input name="cantidad" id="swal-input2" class="swal2-input">' +
             '<label for="marca">Marca</label>' +
-            '<input name="marca" id="swal-input2" class="swal2-input">' +
+            '<input name="marca" id="swal-input3" class="swal2-input">' +
             '<label for="categoria">Categoria</label>' +
-            '<input name="categoria" id="swal-input3" class="swal2-input">' +
+            '<input name="categoria" id="swal-input4" class="swal2-input">' +
             `<input type="hidden" name="id" value=${producto.id} >` +
             '</form>',
     })
     const updateForm = document.querySelector('#updateForm');
     const data = new FormData();
     data.append('producto', updateForm[0].value.toLowerCase());
-    data.append('marca', updateForm[1].value.toLowerCase());
-    data.append('categoria', updateForm[2].value.toLowerCase());
-    data.append('id', updateForm[3].value);
+    data.append('cantidad', updateForm[1].value);
+    data.append('marca', updateForm[2].value.toLowerCase());
+    data.append('categoria', updateForm[3].value.toLowerCase());
+    data.append('id', updateForm[4].value);
 
     if (formValues) {
         try {
