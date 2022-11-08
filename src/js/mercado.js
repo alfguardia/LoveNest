@@ -247,7 +247,7 @@ async function confirmarEdicion(producto) {
             '<label for="cantidad">Cantidad</label>' +
             `<input name="cantidad" id="swal-input2" class="swal2-input" value="${producto.cantidad}">` +
             '<label for="marca">Marca</label>' +
-            `<input name="marca" id="swal-input3" class="swal2-input" value="${producto.cantidad}">` +
+            `<input name="marca" id="swal-input3" class="swal2-input" value="${producto.marca}">` +
             '<label for="categoria">Categoria</label>' +
             `<input name="categoria" id="swal-input4" class="swal2-input" value="${producto.categoria}">` +
             `<input type="hidden" name="id" value=${producto.id} >` +
