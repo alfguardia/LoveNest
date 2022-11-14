@@ -1,7 +1,7 @@
 {
     "name": "Lovenest",
     "short_name": "Lovenest",
-    "start_url": "./index.html",
+    "start_url": "./index.php",
     "display": "standalone",
     "background_color": "#D41872",
     "theme_color": "#D41872",
