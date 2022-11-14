@@ -1,7 +1,8 @@
 {
     "name": "Lovenest",
     "short_name": "Lovenest",
-    "start_url": "https://lovenest-app.herokuapp.com/",
+    "start_url": "./",
+    "scope": ".",
     "display": "standalone",
     "background_color": "#D41872",
     "theme_color": "#D41872",
