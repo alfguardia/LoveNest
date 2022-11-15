@@ -1,1 +1,1 @@
-"serviceWorker"in navigator?navigator.serviceWorker.register("./sw.js").then(e=>console.log("Se registro correctamente...",e)).catch(e=>console.log("Falló la instalación",e)):console.log("No sporta serviceWorker");
+"serviceWorker"in navigator?navigator.serviceWorker.register("./sw.js").then(e=>console.log("Se registro correctamente...",e)).catch(e=>console.log("Falló la instalación",e)):console.log("No soporta serviceWorker");

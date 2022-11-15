@@ -5,5 +5,5 @@ if ('serviceWorker' in navigator) {
         .then(registrado => console.log('Se registro correctamente...', registrado))
         .catch(error => console.log('Falló la instalación', error));
 } else {
-    console.log('No sporta serviceWorker');
+    console.log('No soporta serviceWorker');
 }
