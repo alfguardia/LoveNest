@@ -11,6 +11,11 @@
             "src": "build/img/logo_72x72.png",
             "type": "image/png",
             "sizes": "72x72"
+        },
+        {
+            "src": "build/img/logo_144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
         }
     ]
 }
