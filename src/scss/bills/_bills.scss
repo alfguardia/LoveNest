@@ -1,0 +1,58 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.gastos {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .gasto-input {
+        margin: 1rem 0;
+        border: none;
+        border-bottom: 2px solid v.$rojo;
+    }
+
+    .gasto-select{
+        text-align: center;
+    }
+
+    .gasto-input-cuotas {
+        margin: 1rem 0;
+        border: none;
+        border-bottom: 2px solid v.$rojo;
+    }
+
+    .gasto-select {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .gasto-campo {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .gasto-cuotas {
+        opacity: 0;
+        width: 0;
+        max-height: 0;
+    }
+
+    .gasto-cuotas-show {
+        opacity: 1;
+        max-height: auto;
+        width: auto;
+        transition: opacity 300ms ease-in;
+    }
+}
+
+.alerta {
+    padding: 1rem;
+    color: v.$blanco;
+    background-color: lighten(v.$rojo, $amount: 20%);
+}

@@ -1,0 +1,49 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.alerta {
+    text-align: center;
+    margin: 1rem auto;
+    color: v.$blanco;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &.error {
+        border-left: 20px solid v.$rojo;
+        background-color: lighten($color: v.$rojo, $amount: 50%);
+    }
+
+    &.exito {
+        background-color: lighten($color: v.$verdeClaro, $amount: 0%);
+        border-left: 20px solid v.$verde;
+    }
+}
+
+.alertas {
+    div:nth-last-child(1) {
+        margin-bottom: 3rem;
+    }
+}
+
+.mensaje {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: v.$verdeClaro;
+}
+
+.swal2-title {
+    font-family: v.$fuente_secundaria !important;
+}
+
+.swal2-styled.swal2-confirm,
+.swal2-styled.swal2-cancel {
+    font-family: v.$fuente_secundaria !important;
+}

@@ -1,0 +1,170 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.lista__articulos__label {
+    text-align: center;
+    font-weight: bold;
+}
+
+.lista_display {
+    display: none;
+}
+
+.lista_articulos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    background-color: v.$rosa;
+    border-radius: 1rem;
+
+    li {
+        padding: 1rem 1.5rem;
+    }
+
+    .label-producto {
+        margin-left: 1rem;
+        font-weight: bold;
+    }
+
+    .div-product {
+        display: flex;
+        align-items: center;
+    }
+
+    .div-icono {
+        width: auto;
+        grid-column: 3;
+    }
+
+    .editar-producto {
+        height: 28px;
+        width: 28px;
+        background-image: url(../img/edit.webp);
+        background-size: contain;
+        margin: 0 auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .eliminar-producto {
+        height: 28px;
+        width: 28px;
+        background-image: url(../img/delete.webp);
+        background-size: contain;
+        margin: 0 auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.opciones {
+    display: flex;
+}
+
+.lista__articulos__head {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1/3;
+    font-weight: bold;
+    background-color: v.$guayaba;
+    border-radius: 1rem;
+
+    p:first-child {
+        margin-left: 2rem;
+    }
+    p:last-child {
+        margin-right: 2rem;
+    }
+
+    p {
+        color: v.$blanco;
+    }
+}
+
+.lista_opcion {
+    display: flex;
+    .lista_select {
+        margin-top: 1rem;
+        padding: 1rem;
+        width: 100%;
+        border: none;
+        border-bottom: 1.5px solid v.$rojo;
+        font-weight: bold;
+    }
+}
+
+.articulos {
+    color: v.$negro;
+    font-weight: bold;
+    grid-column: 1;
+
+    input[type="checkbox"] {
+        appearance: none;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid v.$negro;
+        border-radius: 0.5rem;
+        transform: translateY(-0.075rem);
+        display: grid;
+        place-content: center;
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em v.$verde;
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+}
+
+.img-categoria {
+    height: 28px;
+    width: 28px;
+}
+
+.updateForm {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    select {
+        border: none;
+        border-bottom: 1px solid v.$rojo;
+        box-shadow: unset;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .cuotas {
+        display: block;
+    }
+    .cuotasOff {
+        display: none;
+    }
+}
+
+.total-gasto {
+    font-weight: bold;
+    margin-top: 3rem;
+    text-align: center;
+
+    span {
+        color: v.$azul;
+    }
+}

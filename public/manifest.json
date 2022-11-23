@@ -1,0 +1,21 @@
+{
+    "name": "Lovenest",
+    "short_name": "Lovenest",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#D41872",
+    "theme_color": "#D41872",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "build/img/logo_bg_72x72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "build/img/logo_bg_144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        }
+    ]
+}

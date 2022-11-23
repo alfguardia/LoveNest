@@ -1,0 +1,18 @@
+{
+    "name": "aj/urbetrack-db",
+    "description": "Urbetrack Base de Datos",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Model\\": "./models",
+            "Views\\": "./views",
+            "Controller\\": "./controllers",
+            "Classes\\": "./classes"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.6",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

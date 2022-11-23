@@ -1,0 +1,69 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.aside {
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: v.$negro;
+
+    &.mostrar {
+        opacity: 1;
+        width: 100%;
+        transition: all 0.5s ease-in;
+    }
+
+    &.ocultar {
+        opacity: 0;
+        transition: all 0.5s ease-in;
+    }
+
+    p {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: v.$blanco;
+        text-align: center;
+    }
+
+    .aside__div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            color: v.$blanco;
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+        img {
+            margin-left: 2rem;
+            height: 28px;
+            width: 28px;
+        }
+    }
+
+    .head__aside{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .cerrar-modal {
+        margin: 1rem;
+        background-color: v.$rojo;
+        border: none;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        color: v.$blanco;
+        font-weight: bold;
+    }
+
+}
+
+
+

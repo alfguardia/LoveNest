@@ -1,0 +1,27 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.mercado {
+    .mercado__campo {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+
+        label {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            text-transform: lowercase;
+            padding: 0.5rem;
+            border: none;
+            border-bottom: 1px solid darken(v.$rojoSuave, 0%);
+            text-align: center;
+            margin: 0;
+        }
+    }
+}
