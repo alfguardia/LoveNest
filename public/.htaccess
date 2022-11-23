@@ -1,4 +1,4 @@
+Options -Multiviews
 RewriteEngine on
-DirectoryIndex index.php
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+RewriteRule ^ index.php [QSA,L]
