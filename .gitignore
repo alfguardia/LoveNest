@@ -1,6 +1,4 @@
 node_modules
-vendor
 package-lock.json
 package.json
 gulpfile.js
-.env
