@@ -3,7 +3,7 @@
         'name' => 'aj/urbetrack-db',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'efa85acad0d51e6575e4bf510ae178271e2ce93d',
+        'reference' => '2888bf6be440e5e75c003598457bbcbae6d50d58',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'aj/urbetrack-db' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'efa85acad0d51e6575e4bf510ae178271e2ce93d',
+            'reference' => '2888bf6be440e5e75c003598457bbcbae6d50d58',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
