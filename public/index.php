@@ -1,6 +1,6 @@
 <?php
 
-include '/includes/app.php';
+include_once '/includes/app.php';
 
 use MVC\Router;
 use Controller\APIController;
