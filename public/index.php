@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ ;
+require_once '/app/includes/app.php';
 
 use MVC\Router;
 use Controller\APIController;
@@ -36,7 +36,7 @@ $router->get('/mercado', [DashboardController::class, 'mercado']);
 $router->get('/lista-mercado', [DashboardController::class, 'listaMercado']);
 
 // API
-    // --- Productos --- 
+// --- Productos --- 
 $router->post('/API/registro-producto', [APIController::class, 'registrarProducto']);
 $router->get('/API/obtener-producto', [APIController::class, 'obtenerProductos']);
 $router->post('/API/editar-producto', [APIController::class, 'editarProductos']);
