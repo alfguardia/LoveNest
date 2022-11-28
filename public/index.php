@@ -1,6 +1,6 @@
 <?php
 
-require_once '/../../includes/app.php';
+//require_once '/../../includes/app.php';
 
 
 use MVC\Router;
