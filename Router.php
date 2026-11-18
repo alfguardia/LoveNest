@@ -19,21 +19,22 @@ class Router
 
     public function comprobarRutas()
     {
-        
-            
-          // -------- Para desarrollo local ----------------
+
+
+        // -------- Para desarrollo local ----------------
         // $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
         // -----------------------------------------------
 
-        
+
         // ---------- Para deployment --------------------
         //$currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         // -----------------------------------------------
 
-        $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+
+        $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
 
-        $splitURL = explode('?',$currentUrl);
+        $splitURL = explode('?', $currentUrl);
 
         if ($method === 'GET') {
             $fn = $this->getRoutes[$splitURL[0]] ?? null;
@@ -42,7 +43,9 @@ class Router
         }
 
 
-        if ( $fn ) {
+
+
+        if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {

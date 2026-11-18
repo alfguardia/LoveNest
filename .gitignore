@@ -3,3 +3,18 @@ package-lock.json
 package.json
 gulpfile.js
 .env
+# Added by backup script
+node_modules/
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+.env.test
+!.env.example
+!.env.sample
+!.env.template
+.DS_Store
+Thumbs.db
+*.log
+

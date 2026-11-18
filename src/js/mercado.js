@@ -49,8 +49,8 @@ async function registerProduct() {
         data.append('cantidad', registroProducto[2].value);
         data.append('categoria', registroProducto[3].value.toLowerCase());
         data.append('observacion', registroProducto[4].value.toLowerCase());
-
-        const url = 'https://lovenest-app.herokuapp.com/API/registro-producto';
+        
+        const url = 'https://lovenest.alwaysdata.net/API/registro-producto';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
@@ -97,7 +97,7 @@ function offLoader() {
 
 async function obtenerProductos() {
     try {
-        const url = 'https://lovenest-app.herokuapp.com/API/obtener-producto';
+        const url = 'https://lovenest.alwaysdata.net/API/obtener-producto';
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
         if (respuesta) {
@@ -281,7 +281,7 @@ async function confirmarEdicion(producto) {
 }
 
 async function finalizarEdicion(data) {
-    const url = 'https://lovenest-app.herokuapp.com/API/editar-producto';
+    const url = 'https://lovenest.alwaysdata.net/API/editar-producto';
     const resultado = await fetch(url, {
         method: 'POST',
         body: data
@@ -318,7 +318,7 @@ async function eliminar(producto) {
     data.append('id', producto.id);
 
     try {
-        const url = 'https://lovenest-app.herokuapp.com/API/eliminar-producto';
+        const url = 'https://lovenest.alwaysdata.net/API/eliminar-producto';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data

@@ -78,7 +78,7 @@ async function guardarGastos() {
     try {
         console.log('Guardando...');
         const data = new FormData(gastosForm);
-        const url = 'https://lovenest-app.herokuapp.com/API/registro-gastos';
+        const url = 'https://lovenest.alwaysdata.net/API/registro-gastos';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
@@ -98,7 +98,7 @@ async function guardarGastos() {
 // Lista de gastos
 
 async function obtenerGastos() {
-    const url = 'https://lovenest-app.herokuapp.com/API/obtener-gastos';
+    const url = 'https://lovenest.alwaysdata.net/API/obtener-gastos';
     try {
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
@@ -277,7 +277,7 @@ async function confirmarEdicion(gastos) {
 
 // Finalizar edición de cuotas
 async function finalizarEdicion(data) {
-    const url = 'https://lovenest-app.herokuapp.com/API/editar-gastos';
+    const url = 'https://lovenest.alwaysdata.net/API/editar-gastos';
     const resultado = await fetch(url, {
         method: 'POST',
         body: data
@@ -361,7 +361,7 @@ async function finalizarEliminado(gasto) {
     data.append('id', id);
 
     try {
-        const url = 'https://lovenest-app.herokuapp.com/API/eliminar-gasto';
+        const url = 'https://lovenest.alwaysdata.net/API/eliminar-gasto';
         const resultado = await fetch(url, {
             method: 'POST',
             body: data
